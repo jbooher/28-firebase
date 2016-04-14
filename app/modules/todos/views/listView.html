@@ -1,0 +1,12 @@
+<form ng-submit="listCtrl.addList()">
+
+  <input type="text" placeholder="List Name" ng-model="listCtrl.list">
+  <input type="submit">
+
+</form>
+
+<ul>
+  <li ng-repeat="list in listCtrl.lists">
+    <a ui-sref="todos({ id: list.$id })">{{ list.name }}</a>
+  </li>
+</ul>
