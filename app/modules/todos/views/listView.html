@@ -1,0 +1,17 @@
+<div class="header">
+  <h1>To-Do List</h1>
+
+  <form class="header--form" ng-submit="listCtrl.addList()">
+
+    <input type="text" id="input" placeholder="List Name" ng-model="listCtrl.list">
+    <input type="submit" id="add">
+
+  </form>
+</div>
+
+<ul class="content">
+  <li ng-repeat="list in listCtrl.lists"  ui-sref="todos({ id: list.$id })" class="content--item">
+    <span>{{ list.name }}</span>
+    <input type="submit" id="delete" value="Delete" ng-click="listCtrl.deleteList(list)">
+  </li>
+</ul>

@@ -1,0 +1,22 @@
+<div class="header">
+
+  <input type="submit" id="home" value="Home" ui-sref="lists">
+  <input type="submit" id="complete" value="Complete" ng-click="todoCtrl.showComplete()">
+  <input type="submit" id="incomplete" value="Incomplete" ng-click="todoCtrl.showIncomplete()">
+
+  <form ng-submit="todoCtrl.addTodo()" class="header--form">
+
+    <input type="text" id="input" placeholder="To Do" ng-model="todoCtrl.item">
+    <input type="submit" id="add" value = "Add To Do">
+
+  </form>
+</div>
+
+<ul class="content">
+  <li  class="content--item" ng-repeat="item in todoCtrl.list.todos" ng-class="{ 'completed': item.completed }" ng-show="todoCtrl.showCompleted === item.completed" ng-click="todoCtrl.toggleComplete(item)">
+
+    <span ng-click="todoCtrl.toggleComplete(item)">{{ item.item }}</span>
+    <input type="submit" id="archive" ng-click="todoCtrl.removeTodo(item)" value="Archive" ng-show="item.completed">
+
+  </li>
+</ul>
