@@ -1,12 +1,15 @@
-<form ng-submit="listCtrl.addList()">
+<div class="header">
+  <form ng-submit="listCtrl.addList()">
 
-  <input type="text" placeholder="List Name" ng-model="listCtrl.list">
-  <input type="submit">
+    <input type="text" id="input" placeholder="List Name" ng-model="listCtrl.list">
+    <input type="submit" id="add">
 
-</form>
+  </form>
+</div>
 
-<ul>
-  <li ng-repeat="list in listCtrl.lists">
-    <a ui-sref="todos({ id: list.$id })">{{ list.name }}</a>
+<ul class="content">
+  <li ng-repeat="list in listCtrl.lists"  ui-sref="todos({ id: list.$id })" class="content--item">
+    <span>{{ list.name }}</span>
+    <input type="submit" id="delete" value="Delete" ng-click="listCtrl.deleteList(list)">
   </li>
 </ul>

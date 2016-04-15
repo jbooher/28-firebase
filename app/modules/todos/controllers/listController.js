@@ -13,6 +13,10 @@ class ListController {
 
     this.list = "";
   }
+
+  deleteList(list) {
+    this.lists.$remove(list);
+  }
 }
 
 export default ListController;

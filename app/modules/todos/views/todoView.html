@@ -1,19 +1,22 @@
-<input type="submit" value="Home" ui-sref="lists">
-<input type="submit" value="Complete" ng-click="todoCtrl.showComplete()">
-<input type="submit" value="Incomplete" ng-click="todoCtrl.showIncomplete()">
+<div class="header">
 
-<form ng-submit="todoCtrl.addTodo()">
+  <input type="submit" id="home" value="Home" ui-sref="lists">
+  <input type="submit" id="complete" value="Complete" ng-click="todoCtrl.showComplete()">
+  <input type="submit" id="incomplete" value="Incomplete" ng-click="todoCtrl.showIncomplete()">
 
-  <input type="text" placeholder="To Do" ng-model="todoCtrl.item">
-  <input type="submit" value = "Add To Do">
+  <form ng-submit="todoCtrl.addTodo()" class="header--form">
 
-</form>
+    <input type="text" id="input" placeholder="To Do" ng-model="todoCtrl.item">
+    <input type="submit" id="add" value = "Add To Do">
 
-<ul>
-  <li ng-repeat="item in todoCtrl.list.todos" ng-class="{ 'completed': item.completed }" ng-show="todoCtrl.showCompleted === item.completed" ng-click="todoCtrl.toggleComplete(item)">
+  </form>
+</div>
+
+<ul class="content">
+  <li  class="content--item" ng-repeat="item in todoCtrl.list.todos" ng-class="{ 'completed': item.completed }" ng-show="todoCtrl.showCompleted === item.completed" ng-click="todoCtrl.toggleComplete(item)">
 
     <span ng-click="todoCtrl.toggleComplete(item)">{{ item.item }}</span>
-    <input type="submit" ng-click="todoCtrl.removeTodo(item)" value="Archive" ng-show="item.completed">
+    <input type="submit" id="archive" ng-click="todoCtrl.removeTodo(item)" value="Archive" ng-show="item.completed">
 
   </li>
 </ul>
