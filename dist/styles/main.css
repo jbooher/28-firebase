@@ -26,16 +26,25 @@ input {
   border-right: 1px solid #000; }
 
 .header {
-  min-height: 100px;
+  min-height: 200px;
+  width: 100%;
+  font-size: 3rem;
   border-bottom: 1px solid #000;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+  .header h1 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
   .header--form {
     border-top: 1px solid #000; }
   .header input {
-    padding: 0 20px;
     font-size: 3rem;
+    display: inline-block;
+    padding: 0 20px;
     height: 100px;
     border-left: 1px solid #000; }
     .header input:nth-child(3) {
@@ -45,11 +54,25 @@ input {
   .header #home, .header #input {
     background: linear-gradient(#fff, #ddd 90%); }
   .header #complete, .header #incomplete {
-    background: linear-gradient(#00c, #006);
+    background: linear-gradient(#00c, #006, #002);
     color: #eee; }
+  .header #input {
+    width: calc(75% - 1px);
+    height: 99px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #000;
+    border-left: none; }
   .header #add {
-    background: linear-gradient(#c00, #600);
-    color: #eee; }
+    background: linear-gradient(#c00, #600, #200);
+    color: #eee;
+    width: calc(25% - 1px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid #000;
+    border-right: none; }
 
 .content {
   display: flex;
@@ -57,26 +80,29 @@ input {
   justify-content: center;
   align-items: center; }
   .content--item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    position: relative;
+    text-align: left;
     height: 100px;
     width: 100%;
-    font-size: 2rem;
+    font-size: 3rem;
     border-bottom: 1px solid #000; }
-    .content--item a {
-      color: #000; }
+    .content--item span {
+      position: absolute;
+      top: 50%;
+      margin-left: 20px;
+      transform: translateY(-50%); }
     .content--item input {
       text-decoration: none;
-      font-size: 2rem;
+      font-size: 3rem;
       height: 100px;
+      width: calc(25% - 1px);
       border-left: 1px solid #000;
       border-right: 1px solid #000;
       padding: 0 20px;
-      margin-left: 20px; }
+      margin-left: 20px;
+      float: right; }
     .content--item #archive, .content--item #delete {
-      background: linear-gradient(#c00, #600);
+      background: linear-gradient(#c00, #600, #000);
       color: #eee; }
 
 .completed span {
