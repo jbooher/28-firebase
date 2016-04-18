@@ -11,5 +11,11 @@ let App = angular.module('app', [
   'firebase',
 
   'jb.todos'
-  
+
 ]);
+
+function config($urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+}
+
+App.config(config);
